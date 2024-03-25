@@ -35,6 +35,8 @@ export default function Dashboard() {
                 {/* blog */}
                 <DBblogs />
 
+                {/* blog */}
+               <DBblogs/>
             </div>
 
 
