@@ -1,11 +1,10 @@
-import { FaEdit, FaTrash } from "react-icons/fa";
-import DbNavbar from "../../components/dashboardcomponents/db_navbar";
-import DBblogs from "../../components/dashboardcomponents/db_blog";
-import DbSkills from "../../components/dashboardcomponents/db_skills";
-import DbAwards from "../../components/dashboardcomponents/db_awards";
-import DbAchievement from "../../components/dashboardcomponents/db_achievements";
-import DbProjects from "../../components/dashboardcomponents/db_projects";
-import db_bkg from "../../assets/db_background.jpg"
+import DbNavbar from "../../../components/dashboardcomponents/db_navbar";
+import DBblogs from "../../../components/dashboardcomponents/db_blog";
+import DbSkills from "../../../components/dashboardcomponents/db_skills";
+import DbAwards from "../../../components/dashboardcomponents/db_awards";
+import DbAchievement from "../../../components/dashboardcomponents/db_achievements";
+import DbProjects from "../../../components/dashboardcomponents/db_projects";
+import db_bkg from "../../../assets/db_background.jpg";
 
 
 export default function Dashboard() {
@@ -34,9 +33,6 @@ export default function Dashboard() {
                 </div>
                 {/* blog */}
                 <DBblogs />
-
-                {/* blog */}
-               <DBblogs/>
             </div>
 
 
