@@ -1,31 +1,40 @@
 import { Router } from "express";
-import { deleteAllBlogs, deleteOneBlog, getAllBlogs, getOneBlog, postBlog, updateAllBlogs, updateOneBlog } from "../controllers/blog.controllers.js";
+import {
+  deleteAllBlogs,
+  deleteOneBlog,
+  getAllBlogs,
+  getOneBlog,
+  postBlog,
+  updateAllBlogs,
+  updateOneBlog,
+} from "../controllers/blog.controllers.js";
+import multer from "multer";
 
+// create multer upload  middleware
+const upload = multer({ dest: "uploads/" });
 
-
-// initialize router
+// create blog router
 const router = Router();
-
 
 // Define routes
 
-router.post('/', postBlog)
+router.post("/", upload.single("image"), postBlog);
 
 // Get all blog
-router.get('/', getAllBlogs);
+router.get("/", getAllBlogs);
 
 // update all blog
-router.patch('/', updateAllBlogs);
+router.patch("/", updateAllBlogs);
 
 // Delete all blogs
-router.delete('/', deleteAllBlogs);
+router.delete("/", deleteAllBlogs);
 
 // Get a single blog
-router.get('/:id', getOneBlog);
+router.get("/:id", getOneBlog);
 
 // delete one blog
-router.delete('/:id', deleteOneBlog);
+router.delete("/:id", deleteOneBlog);
 // update one blog
-router.patch('/:id', updateOneBlog);
+router.patch("/:id", updateOneBlog);
 
 export default router;

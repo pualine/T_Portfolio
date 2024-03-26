@@ -67,7 +67,7 @@ export const getOneBlog = async (req, res, next) => {
 // UPDATE one blog by id
 export const updateOneBlog = async (req, res, next) => {
   try {
-    const updateOneResult = await BlogModel.updateOne();
+    const updateOneResult = await BlogModel.findByIdAndUpdate({_id: req.params.id});
     if (!updateOneResult) {
       return res
         .status(404)
