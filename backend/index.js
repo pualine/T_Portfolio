@@ -5,10 +5,13 @@ import cors from "cors";
 import awardsRoutes from "./routes/awards.routes.js";
 import blogRoutes  from './routes/blog.routes.js';
 import skillsRoutes from  './routes/skills.routes.js'; 
-import experienceRoutes from  './routes/experience.routes.js' ;
+import experienceRoutes from  './routes/experience.routes.js';
+import projectRoutes from "./routes/projects.routes.js"
+
+
+
 // Load env variable
 dotenv.config({path:['.env.local']});
-
 
 // create express app
 const app = express();
@@ -17,13 +20,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cors());
-app.use(express.static("uploads"))
+app.use(express.static("uploads")); // to access the upload files in uploads folder
 
 // use routes 
 app.use('/awards', awardsRoutes);
 app.use('/blogs', blogRoutes);
 app.use('/skills', skillsRoutes );
 app.use('/experience', experienceRoutes );
+app.use('/projects', projectRoutes );
+
 
 
 

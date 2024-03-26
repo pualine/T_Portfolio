@@ -1,7 +1,7 @@
 import { SkillsModel } from "../models/skills.models.js";
 
-// POST blog
-export const postskills = async (req, res) => {
+// Add Skills
+export const addSkills = async (req, res) => {
   const skillsResult = await SkillsModel.create({ ...req.body });
   if (!skillsResult) {
     return res.status(404).json("Error creating new skills");
@@ -10,7 +10,7 @@ export const postskills = async (req, res) => {
   }
 };
 
-// GET  all blogs
+// GET  all skills
 export const getAllSkills = async (req, res) => {
   const getResults = await SkillsModel.find();
   if (getResults.length === 0) {
@@ -20,7 +20,7 @@ export const getAllSkills = async (req, res) => {
   }
 };
 
-// UPDATE all blogs
+// UPDATE all skills
 export const updateAllSkills = async (req, res) => {
   const updateResults = await SkillsModel.updateMany();
   if (!updateResults) {
@@ -30,7 +30,7 @@ export const updateAllSkills = async (req, res) => {
   }
 };
 
-// DELETE all blogs
+// DELETE all skills
 export const deleteAllSkills = async (req, res, next) => {
   try {
     const removeResult = await SkillsModel.deleteMany();
@@ -40,14 +40,14 @@ export const deleteAllSkills = async (req, res, next) => {
   }
 };
 
-// GET one blog by id
+// GET one skills by id
 export const getOneSkills = async (req, res, next) => {
   try {
     const getOneResult = await SkillsModel.findOne();
     if (!getOneResult) {
       return res
         .status(404)
-        .json(`The award with the given ID:${req.params.id} was not found.`);
+        .json(`The skills with the given ID:${req.params.id} was not found.`);
     } else {
       res.status(200).json(getOneResult);
     }
@@ -65,7 +65,7 @@ export const updateOneSkills = async (req, res, next) => {
     if (!updateOneResult) {
       return res
         .status(404)
-        .json(`The award with the given ID:${req.params.id} was not found.`);
+        .json(`The skills with the given ID:${req.params.id} was not found.`);
     } else {
       res.status(200).json("Updated successfully");
     }
@@ -74,13 +74,13 @@ export const updateOneSkills = async (req, res, next) => {
   }
 };
 
-//  DELETE one blog by id
+//  DELETE one skills by id
 export const deleteOneSkills = async function (req, res) {
   const removeOnedskills = await SkillsModel.findByIdAndDelete();
   if (!removeOnedskills) {
     return res
       .status(404)
-      .json(`The award with the given ID:${req.params.id} was not found.`);
+      .json(`The skills with the given ID:${req.params.id} was not found.`);
   } else {
     return res.status(200).json("Deleted Successfully!");
   }

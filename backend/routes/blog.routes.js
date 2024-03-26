@@ -1,10 +1,10 @@
 import { Router } from "express";
 import {
+    addBlog,
   deleteAllBlogs,
   deleteOneBlog,
   getAllBlogs,
   getOneBlog,
-  postBlog,
   updateAllBlogs,
   updateOneBlog,
 } from "../controllers/blog.controllers.js";
@@ -18,7 +18,7 @@ const router = Router();
 
 // Define routes
 
-router.post("/", upload.single("image"), postBlog);
+router.post("/", upload.single("image"), addBlog);
 
 // Get all blog
 router.get("/", getAllBlogs);

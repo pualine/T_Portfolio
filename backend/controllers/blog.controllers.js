@@ -1,7 +1,7 @@
 import { BlogModel } from "../models/blog.models.js";
 
 // POST blog
-export const postBlog = async (req, res, next) => {
+export const addBlog = async (req, res, next) => {
   try {
     const blogResult = await BlogModel.create({ ...req.body });
     return res.status(201).json("Blog was created successfully!");
@@ -71,7 +71,7 @@ export const updateOneBlog = async (req, res, next) => {
     if (!updateOneResult) {
       return res
         .status(404)
-        .json(`No award with this ID:${req.params.id} exists`);
+        .json(`No blog with this ID:${req.params.id} exists`);
     } else {
       return res.status(200).json("Updated successfully");
     }
@@ -89,7 +89,7 @@ export const deleteOneBlog = async function (req, res, next) {
     if (!removeOnedBlog) {
       return res
         .status(404)
-        .json(`The award with the given ID:${req.params.id} was not found.`);
+        .json(`The blog with the given ID:${req.params.id} was not found.`);
     } else {
       return res.status(200).json("Deleted Successfully!");
     }

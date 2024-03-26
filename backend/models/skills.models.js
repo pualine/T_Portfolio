@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
 
 const skillsSchema = new Schema({
-    name:{type:String, required:true},
-    proficiency:{type:String, required:true}
+  name: { type: String, required: true },
+  proficiency: { type: String, required: true },
 });
 
-export const SkillsModel = model( 'Skills', skillsSchema, 'skills');
+export const SkillsModel = model("Skills", skillsSchema, "skills");
