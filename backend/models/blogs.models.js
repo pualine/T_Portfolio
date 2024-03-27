@@ -3,16 +3,8 @@ import { Schema, model } from "mongoose";
 const blogSchema = new Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
-  author: {
-    id: {
-      type: Schema.Types.ObjectId,
-      ref: "User",
-    },
-    username: String,
-  },
-
+  author: { type: String, required: true },
   dateCreated: { type: Date, required: true, default: Date.now() },
-  timeCreated: { type: Number }, //time in seconds
   image: { type: String, required: true }, // Adjusted field name to 'image'
 });
 
