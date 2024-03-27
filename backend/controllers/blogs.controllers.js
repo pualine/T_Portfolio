@@ -3,21 +3,53 @@ import { BlogModel } from "../models/blogs.models.js";
 // POST blog
 export const addBlog = async (req, res, next) => {
   try {
-    const blogResult = await BlogModel.create({ ...req.body, image: req.file.filename });
-    return res.status(201).json("Blog was created successfully!");
+    // Ensure an image file is provided
+    if (!req.file) {
+      return res.status(400).json({ message: "No image file provided" });
+    }
+
+    const { title, content } = req.body;
+
+    // Assuming req.file.filename contains the name of the uploaded image file
+    const blogResult = await BlogModel.create({
+      title,
+      content,
+      image: req.file.filename,
+    });
+    return res
+      .status(201)
+      .json({ message: "Blog was created successfully", data: blogResult });
   } catch (error) {
     next(error);
   }
 };
 
-// GET  all blogs
+// GET all blogs
 export const getAllBlogs = async (req, res, next) => {
   try {
     const getResults = await BlogModel.find();
     if (getResults.length === 0) {
-      return res.status(404).json("No data found");
+      return res.status(404).json({ message: "No blogs found" });
     } else {
-      return res.status(200).json(getResults);
+      return res.status(200).json({ data: getResults });
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
+// GET one blog by id
+export const getOneBlog = async (req, res, next) => {
+  try {
+    const getOneResult = await BlogModel.findById(req.params.id);
+    if (!getOneResult) {
+      return res
+        .status(404)
+        .json({
+          message: `No blog with the given ID:${req.params.id} was found`,
+        });
+    } else {
+      return res.status(200).json({ data: getOneResult });
     }
   } catch (error) {
     next(error);
@@ -27,12 +59,15 @@ export const getAllBlogs = async (req, res, next) => {
 // UPDATE all blogs
 export const updateAllBlogs = async (req, res, next) => {
   try {
-    const updateResults = await BlogModel.updateMany();
-    if (!updateResults) {
-      return res.status(404).json("No Blog found!");
-    } else {
-      return res.status(200).json(updateResults);
-    }
+    // Update logic here (if needed)
+    // For demonstration purposes, let's assume we're updating all blogs with some data
+    const updateResults = await BlogModel.updateMany(
+      {},
+      { title: "Updated Title", content: "Updated Content" }
+    );
+    return res
+      .status(200)
+      .json({ message: "All blogs updated successfully", data: updateResults });
   } catch (error) {
     next(error);
   }
@@ -41,24 +76,9 @@ export const updateAllBlogs = async (req, res, next) => {
 // DELETE all blogs
 export const deleteAllBlogs = async (req, res, next) => {
   try {
+    // Delete logic here (if needed)
     const removeResult = await BlogModel.deleteMany();
-    return res.status(200).json("Deleted Successfully!");
-  } catch (error) {
-    next(error);
-  }
-};
-
-// GET one blog by id
-export const getOneBlog = async (req, res, next) => {
-  try {
-    const getOneResult = await BlogModel.findById({ _id: req.params.id });
-    if (!getOneResult) {
-      return res
-        .status(404)
-        .json(`The Blog with the given ID:${req.params.id} was not found.`);
-    } else {
-      return res.status(200).json(getOneResult);
-    }
+    return res.status(200).json({ message: "All blogs deleted successfully" });
   } catch (error) {
     next(error);
   }
@@ -67,31 +87,38 @@ export const getOneBlog = async (req, res, next) => {
 // UPDATE one blog by id
 export const updateOneBlog = async (req, res, next) => {
   try {
-    const updateOneResult = await BlogModel.findByIdAndUpdate({_id: req.params.id});
+    const { title, content } = req.body;
+    const updateOneResult = await BlogModel.findByIdAndUpdate(
+      req.params.id,
+      { title, content },
+      { new: true }
+    );
     if (!updateOneResult) {
       return res
         .status(404)
-        .json(`No blog with this ID:${req.params.id} exists`);
+        .json({ message: `No blog with this ID:${req.params.id} exists` });
     } else {
-      return res.status(200).json("Updated successfully");
+      return res
+        .status(200)
+        .json({ message: "Blog updated successfully", data: updateOneResult });
     }
   } catch (error) {
     next(error);
   }
 };
 
-//  DELETE one blog by id
-export const deleteOneBlog = async function (req, res, next) {
+// DELETE one blog by id
+export const deleteOneBlog = async (req, res, next) => {
   try {
-    const removeOnedBlog = await BlogModel.findByIdAndDelete({
-      _id: req.params.id,
-    });
-    if (!removeOnedBlog) {
+    const removeOneBlog = await BlogModel.findByIdAndDelete(req.params.id);
+    if (!removeOneBlog) {
       return res
         .status(404)
-        .json(`The blog with the given ID:${req.params.id} was not found.`);
+        .json({
+          message: `No blog with the given ID:${req.params.id} was found`,
+        });
     } else {
-      return res.status(200).json("Deleted Successfully!");
+      return res.status(200).json({ message: "Blog deleted successfully" });
     }
   } catch (error) {
     next(error);

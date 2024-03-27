@@ -13,9 +13,7 @@ const blogSchema = new Schema({
 
   dateCreated: { type: Date, required: true, default: Date.now() },
   timeCreated: { type: Number }, //time in seconds
-  blogImage: { type: String, required: true },
+  image: { type: String, required: true }, // Adjusted field name to 'image'
 });
 
 export const BlogModel = model("Blog", blogSchema, "blogs");
-//we are creating a mongoose model called Blog and we are linking it to the schema defined above with the name of our collection being '
-//the third parameter is the collection name

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-    addBlog,
+  addBlog,
   deleteAllBlogs,
   deleteOneBlog,
   getAllBlogs,
@@ -18,23 +18,25 @@ const router = Router();
 
 // Define routes
 
+// POST route to add a new blog with image upload
 router.post("/", upload.single("image"), addBlog);
 
-// Get all blog
+// GET route to get all blogs
 router.get("/", getAllBlogs);
 
-// update all blog
+// PATCH route to update all blogs (if needed)
 router.patch("/", updateAllBlogs);
 
-// Delete all blogs
+// DELETE route to delete all blogs (if needed)
 router.delete("/", deleteAllBlogs);
 
-// Get a single blog
+// GET route to get a single blog by ID
 router.get("/:id", getOneBlog);
 
-// delete one blog
+// DELETE route to delete a single blog by ID
 router.delete("/:id", deleteOneBlog);
-// update one blog
+
+// PATCH route to update a single blog by ID
 router.patch("/:id", updateOneBlog);
 
 export default router;

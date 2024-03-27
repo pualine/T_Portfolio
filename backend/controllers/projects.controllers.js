@@ -2,8 +2,12 @@ import { ProjectModel } from "../models/projects.models.js";
 
 // Add new project to the database
 export const AddProject = async (req, res, next) => {
+  console.log(file);
   try {
-    const addResults = await ProjectModel.create({...req.body});
+    const addResults = await ProjectModel.create({
+      ...req.body,
+      image: req.file.filename,
+    });
     return res.status(201).json("Project created successfully!");
   } catch (error) {
     next(error);
