@@ -3,7 +3,7 @@ import { BlogModel } from "../models/blogs.models.js";
 // POST blog
 export const addBlog = async (req, res, next) => {
   try {
-    const blogResult = await BlogModel.create({ ...req.body });
+    const blogResult = await BlogModel.create({ ...req.body, image: req.file.filename });
     return res.status(201).json("Blog was created successfully!");
   } catch (error) {
     next(error);
