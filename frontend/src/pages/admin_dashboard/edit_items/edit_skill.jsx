@@ -1,21 +1,20 @@
 import DbNavbar from "../../../components/dashboardcomponents/db_navbar";
 import { useState } from "react";
 
-export default function AddSkill() {
+export default function EditSkill() {
     const [loading, setLoading] = useState(false);
-    // const [open, setOpen] = useState(false);
-    // const [message, setMessage] = useState('New Recipe Added Successfully!');
 
-    const addSkill = async (event) => {
+
+    const editSkill = async (event) => {
         setLoading(true);
         event.preventDefault();
-        const skillData = new FormData(event.target);
+        const editskillData = new FormData(event.target);
 
-        const response = await fetch(`${process.env.REACT_APP_BASE_URI}/skills`, {
-            method: "POST",
+        const response = await fetch(`${process.env.REACT_APP_BASE_URI}/skills/id`, {
+            method: "GET",
             body: JSON.stringify({
-                name: skillData.get('name'),
-                proficiency: skillData.get('proficiency'),
+                name: editskillData.get('name'),
+                proficiency: editskillData.get('proficiency'),
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +32,7 @@ export default function AddSkill() {
             <DbNavbar />
             <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg h-2/4">
                 <h2 className="text-xl font-semibold mb-4">Add Skill</h2>
-                <form onSubmit={addSkill}>
+                <form onSubmit={editSkill}>
                     <div className="mb-4">
                         <label className="block text-black font-semibold mb-2">Name of Skill</label>
                         <input
@@ -55,7 +54,7 @@ export default function AddSkill() {
                             <option value="Advanced">Advanced</option>
                         </select>
                     </div>
-                    <button type="submit" className="w-full bg-black text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-300">Add Skill</button>
+                    <button type="submit" className="w-full bg-black text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-300">Save changes</button>
                 </form>
             </div>
         </section>
