@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 import awardsRoutes from "./routes/awards.routes.js";
-import blogRoutes  from './routes/blog.routes.js';
+import blogRoutes  from './routes/blogs.routes.js';
 import skillsRoutes from  './routes/skills.routes.js'; 
 import experienceRoutes from  './routes/experience.routes.js';
 import projectRoutes from "./routes/projects.routes.js"

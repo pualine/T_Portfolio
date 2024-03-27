@@ -1,10 +1,10 @@
 import { Router } from "express";
 import {
+  addExperience,
   deleteAllExperience,
   deleteOneExperience,
   getAllExperience,
   getOneExperience,
-  postExperience,
   updateAllExperience,
   updateOneExperience,
 } from "../controllers/experience.controllers.js";
@@ -14,7 +14,7 @@ const router = Router();
 
 // Define routes
 
-router.post("/", postExperience);
+router.post("/", addExperience);
 
 // Get all blog
 router.get("/", getAllExperience);

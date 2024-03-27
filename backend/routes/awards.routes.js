@@ -7,7 +7,7 @@ import {
   GetOneAwards,
   UpdateAllAwards,
   UpdateOneAwards,
-} from "../controllers/award.controllers.js";
+} from "../controllers/awards.controllers.js";
 
 // Initialize router
 const router = Router();

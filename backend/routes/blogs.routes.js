@@ -7,7 +7,7 @@ import {
   getOneBlog,
   updateAllBlogs,
   updateOneBlog,
-} from "../controllers/blog.controllers.js";
+} from "../controllers/blogs.controllers.js";
 import multer from "multer";
 
 // create multer upload  middleware
