@@ -6,13 +6,6 @@ import { Link, useParams } from "react-router-dom";
 export default function DbSkills() {
     const [skills, setSkills] = useState([]);
 
-    const getOneSkill = async (_id) => {
-        const response = await fetch(`${process.env.REACT_APP_BASE_URI}/skills/${_id}`);
-        const data = await response.json();
-        getOneSkill(data);
-    }
-
-
     const getSkills = async () => {
         const response = await fetch(`${process.env.REACT_APP_BASE_URI}/skills`);
         const data = await response.json();
@@ -28,6 +21,7 @@ export default function DbSkills() {
         const data = await response.json();
 
         console.log(data)
+
     }
 
 
@@ -44,18 +38,20 @@ export default function DbSkills() {
                 <Link to='/addskill' ><FaPlus className="text-black-500 cursor-pointer" /></Link>
 
             </div>
-            {skills.map(skill => (
+            {skills.slice(0,2).map(skill => (
                 <div key={skill._id} className="flex justify-between items-center mb-5 hover:shadow-lg">
                     <h3>{skill.name}</h3>
                     <h4>{skill.proficiency}</h4>
                     <div className="flex space-x-4">
-                        <Link to={`/editskill`}><FaEdit className="text-black-500 cursor-pointer" /></Link>
+                    <Link to={`/skills/${skill._id}`}><FaEdit className="text-black-500 cursor-pointer" /></Link>
                         <FaTrash onClick={() => deleteSkill(skill._id)} className="text-black-500 cursor-pointer" />
                     </div>
                 </div>
             ))
             }
+            <Link to='/skills'>
             <div className="text-center font-semibold">See all Skills</div>
+            </Link>
         </div>
     );
 }

@@ -8,8 +8,8 @@ export default function DbProjects() {
             <FaPlus className="text-black-500 cursor-pointer" />
             </div>
             <div className="flex justify-between items-center mb-5 hover:shadow-lg">
-                <h3>Best dancer</h3>
-                <h4>Proficiency:Advanced</h4>
+                <h3>TAAP FLix</h3>
+                <h4>Designed a creative website</h4>
                 <div className="flex space-x-4">
  
                     <FaEdit className="text-black-500 cursor-pointer" />
@@ -17,8 +17,8 @@ export default function DbProjects() {
                 </div>
             </div>
             <div className="flex justify-between items-center mb-5 hover:shadow-lg">
-                <h3>Best teacher</h3>
-                <h4>Proficiency:Advanced</h4>
+                <h3>AgroBix</h3>
+                <h4>enhanced efficiency of web app for agronomic companies</h4>
                 <div className="flex space-x-4">
                     <FaEdit className="text-black-500 cursor-pointer" />
                     <FaTrash className="text-black-500 cursor-pointer" />

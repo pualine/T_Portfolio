@@ -4,9 +4,7 @@ import { useState } from "react";
 
 export default function AddSkill() {
     const [loading, setLoading] = useState(false);
-    // const [open, setOpen] = useState(false);
-    // const [message, setMessage] = useState('New Recipe Added Successfully!');
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const addSkill = async (event) => {
         setLoading(true);
@@ -27,7 +25,7 @@ export default function AddSkill() {
         console.log(response);
         setLoading(false);
 
-        // navigate("/skills")
+        navigate("/skills")
 
     }
 
@@ -54,13 +52,13 @@ export default function AddSkill() {
                         <select name="proficiency"
                             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-black"
                         >
-                            <option value="">Select proficiency</option>
+                           
                             <option value="Beginner">Beginner</option>
                             <option value="Intermediate">Intermediate</option>
                             <option value="Advanced">Advanced</option>
                         </select>
                     </div>
-                    <button type="submit" className="w-full bg-black text-white font-semibold py-2 rounded-md hover:bg-blue-600 transition duration-300">Add Skill</button>
+                    <button type="submit" className="w-full bg-gray-800 text-white font-semibold py-2 rounded-md hover:bg-sky-500 transition duration-300">Add Skill</button>
                 </form>
             </div>
         </section>
