@@ -1,7 +1,7 @@
 import DbNavbar from "../../../components/dashboardcomponents/db_navbar";
 import DBblogs from "../../../components/dashboardcomponents/db_blog";
 import DbSkills from "../../../components/dashboardcomponents/db_skills";
-import DbAwards from "../../../components/dashboardcomponents/db_awards";
+import DbAwards from "../../../components/dashboardcomponents/db_achievements";
 import DbAchievement from "../../../components/dashboardcomponents/db_achievements";
 import DbProjects from "../../../components/dashboardcomponents/db_projects";
 import db_bkg from "../../../assets/db_background.jpg";
@@ -22,7 +22,7 @@ export default function Dashboard() {
                         <DbSkills />
 
                         {/* awards section */}
-                        <DbAwards />
+                        {/* <DbAwards /> */}
 
                         {/* achievements section */}
                         <DbAchievement />

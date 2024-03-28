@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import DbNavbar from "../../../components/dashboardcomponents/db_navbar";
 import { useState } from "react";
 
@@ -5,6 +6,7 @@ export default function AddSkill() {
     const [loading, setLoading] = useState(false);
     // const [open, setOpen] = useState(false);
     // const [message, setMessage] = useState('New Recipe Added Successfully!');
+    // const navigate = useNavigate()
 
     const addSkill = async (event) => {
         setLoading(true);
@@ -24,6 +26,9 @@ export default function AddSkill() {
         });
         console.log(response);
         setLoading(false);
+
+        // navigate("/skills")
+
     }
 
 
