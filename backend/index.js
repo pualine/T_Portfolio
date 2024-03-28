@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import awardsRoutes from "./routes/awards.routes.js";
+import achievementsRoutes from "./routes/achievements.routes.js";
 import blogRoutes  from './routes/blogs.routes.js';
 import skillsRoutes from  './routes/skills.routes.js'; 
 import experienceRoutes from  './routes/experience.routes.js';
@@ -23,7 +23,7 @@ app.use(cors());
 app.use(express.static("uploads")); // to access the upload files in uploads folder
 
 // use routes 
-app.use('/awards', awardsRoutes);
+app.use('/achievements', achievementsRoutes);
 app.use('/blogs', blogRoutes);
 app.use('/skills', skillsRoutes );
 app.use('/experience', experienceRoutes );

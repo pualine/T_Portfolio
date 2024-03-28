@@ -1,9 +1,9 @@
 import { Schema, model } from "mongoose";
 
-const awardSchema = new Schema({
+const achievementsSchema = new Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   dateAwarded: { type: Date, required: true },
 });
 
-export const AwardModel = model("Awards", awardSchema, "awards");
+export const AchievementsModel = model("Achievements", achievementsSchema, "achievements");
