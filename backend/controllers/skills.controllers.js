@@ -89,7 +89,7 @@ export const updateOneSkills = async (req, res, next) => {
 //  DELETE one skills by id
 export const deleteOneSkills = async function (req, res, next) {
  try {
-   const removeOnedskills = await SkillsModel.findByIdAndDelete();
+   const removeOnedskills = await SkillsModel.deleteOne()
    if (!removeOnedskills) {
      return res
        .status(404)

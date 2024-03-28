@@ -110,7 +110,7 @@ export const updateOneBlog = async (req, res, next) => {
 // DELETE one blog by id
 export const deleteOneBlog = async (req, res, next) => {
   try {
-    const removeOneBlog = await BlogModel.findByIdAndDelete(req.params.id);
+    const removeOneBlog = await BlogModel.deleteOne();
     if (!removeOneBlog) {
       return res
         .status(404)

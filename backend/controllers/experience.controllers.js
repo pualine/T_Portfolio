@@ -67,11 +67,7 @@ export const getOneExperience = async (req, res, next) => {
 // UPDATE one experience by id
 export const updateOneExperience = async (req, res, next) => {
   try {
-    const updateOneResult = await ExperienceModel.findByIdAndUpdate(
-      { _id: req.params.id },
-      req.body,
-      { new: true }
-    );
+    const updateOneResult = await ExperienceModel.deleteOne()
     if (!updateOneResult) {
       return res
         .status(404)

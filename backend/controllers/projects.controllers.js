@@ -48,9 +48,7 @@ export const GetOneProject = async (req, res, next) => {
 // Delete one awards
 export const DeleteOneProject = async (req, res, next) => {
   try {
-    const DeleteOneResults = await ProjectModel.findByIdAndDelete({
-      _id: req.params.id,
-    });
+    const DeleteOneResults = await ProjectModel.deleteOne();
     if (!DeleteOneResults) {
       return res
         .status(404)

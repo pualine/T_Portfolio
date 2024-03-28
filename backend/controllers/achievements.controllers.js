@@ -48,9 +48,7 @@ export const GetOneAchievement = async (req, res, next) => {
 // Delete one  achievements
 export const DeleteOneAchievement = async (req, res, next) => {
   try {
-    const DeleteOneResults = await AchievementsModel.findByIdAndDelete({
-      _id: req.params.id,
-    });
+    const DeleteOneResults = await AchievementsModel.deleteOne()
     if (!DeleteOneResults) {
       return res
         .status(404)
