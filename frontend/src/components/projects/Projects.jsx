@@ -27,8 +27,8 @@ const Projects = () => {
           src={projectTwo}
         />
         <ProjectsCard
-          title="Recipe App"
-          des="A recipe app for findind recipes to enhance cooking experience all from the click of one button"
+          title="Wordle"
+          des="A brain-teasing game app for learning new words and building one's intellect."
           src={projectThree}
         />
       </div>

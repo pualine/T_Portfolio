@@ -122,7 +122,7 @@ const Testimonial = () => {
                   <div className="flex flex-col justify-between lgl:items-center py-6 border-b-2 border-b-gray-900">
                     <div>
                       <h3 className="text-xl lgl:text-2xl font-medium tracking-wide">
-                        Recipe App
+                        Wordle
                       </h3>
                       <p className="text-base text-gray-400 mt-3">
                         via Upwork - Mar 4, 2015 - Aug 30, 2021 test
@@ -136,7 +136,7 @@ const Testimonial = () => {
                       <RiStarFill />
                     </div>
                   </div>
-                  <p className="text-base font-titleFont text-gray-400 font-medium tracking-wide leading-6">I find using their recipe app so comforting. My husband and kids enjoy my meals so much. My home is now full of joy and excitement.
+                  <p className="text-base font-titleFont text-gray-400 font-medium tracking-wide leading-6">I find wordle to be relaxing and a fun activity which promotes learning and critical thinking. i use it as a learning tool to enhance the responsiveness of my students.
                     
                   </p>
                 </div>
@@ -164,7 +164,7 @@ const Testimonial = () => {
                 </div>
               </div>
               <div className="w-full lgl:w-[60%] h-full flex flex-col justify-between">
-                <img className="w-20 lgl:w-32" src={quote} alt="quote" />
+                <img className="w-20 lgl:w-32 " src={quote} alt="quote" />
                 <div className="w-full h-[70%] py-10 bg-gradient-to-r from-[#1e2024] to-[#23272b] rounded-lg shadow-shadowOne p-4 lgl:p-8 flex flex-col justify-center gap-4 lgl:gap-8">
                   <div className="flex flex-col justify-between lgl:items-center py-6 border-b-2 border-b-gray-900">
                     <div>

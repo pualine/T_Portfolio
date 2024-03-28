@@ -19,12 +19,12 @@ const Education = () => {
         <ResumeCard
             title="Full-Stack Web Developer"
             subTitle="MEST Africa (2024 - present)"
-            des="Intensive training in web development in 3 months"
+            des="An Intensive training in web development to raise cohorts of skilled, dynamic and efficient coders notable for their exceptional abilities and unique set of skills."
           />
           <ResumeCard
             title="BSc in Computer Science"
             subTitle="University of Legon (2016 - 2020)"
-            des="The training provided by universities in order to prepare people to work in various sectors of the economy or areas of culture."
+            des="A thrill in tech that enhances professionalism and promotes efficiency."
           />
           
           
@@ -39,22 +39,10 @@ const Education = () => {
         </div>
         <div className="mt-6 lgl:mt-14 w-full h-[1000px] border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
           <ResumeCard
-            title="Sr. Software Engineer"
-            subTitle="Google Out Tech - (2017 - Present)"
-            result="USA"
-            des="Google's hiring process is an important part of our culture. Googlers care deeply about their teams and the people who make them up."
-          />
-          <ResumeCard
-            title="Web Developer & Trainer"
-            subTitle="Apple Developer Team - (2012 - 2016)"
-            result="MALAYSIA"
-            des="A popular destination with a growing number of highly qualified homegrown graduates, it's true that securing a role in Malaysia isn't easy."
-          />
-          <ResumeCard
             title="Front-end Developer"
-            subTitle="Nike - (2020 - 2011)"
-            result="Oman"
-            des="The Oman economy has grown strongly over recent years, having transformed itself from a producer and innovation-based economy."
+            subTitle="Forage - (2024-present)"
+            result="Virtual"
+            des="Contributing to the creative designing and beautification of a website is our hallmark"
           />
         </div>
       </div>
